@@ -16,10 +16,7 @@ https://1drv.ms/p/c/6141bd983847eab1/EQc8AG1o3aNNjyX-xEr7iLcB1oybHj92RWDLcD4ubst
 
 | Splash | Home | Detail |
 | ------ | ---- | ------ |
-|<img src="![splash](https://github.com/oren345/CapstoneProject/assets/106547636/92402c56-b5b4-4aa7-8191-fbeb75daa343)
-" width="250" height="500"/>|<img src="![home](https://github.com/oren345/CapstoneProject/assets/106547636/97da59a3-307d-4b14-8e91-965169a7adf6)
-" width="250" height="500"/>|<img src="![detail](https://github.com/oren345/CapstoneProject/assets/106547636/42e2182e-74b3-40b1-a7fe-f90d12da7505)
-" width="250" height="500"/>|
+|<img src="https://github.com/oren345/CapstoneProject/assets/106547636/92402c56-b5b4-4aa7-8191-fbeb75daa343" width="250" height="500"/>|<img src="https://github.com/oren345/CapstoneProject/assets/106547636/97da59a3-307d-4b14-8e91-965169a7adf6" width="250" height="500"/>|<img src="https://github.com/oren345/CapstoneProject/assets/106547636/42e2182e-74b3-40b1-a7fe-f90d12da7505" width="250" height="500"/>|
 
 </br>
 
