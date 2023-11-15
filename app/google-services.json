@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "313739510804",
+    "project_id": "capstoneproject-766dc",
+    "storage_bucket": "capstoneproject-766dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313739510804:android:5a1eed2c2eb6503473d301",
+        "android_client_info": {
+          "package_name": "com.yazag.capstoneproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv6pipa8WgeFSCZETrA4tE3GvfdzAPVRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
