@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:text="SALE PRODUCTS"
+                android:text="@string/sale_products_title"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/iv_sign_out"
@@ -48,7 +48,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_sale_products_title"
                 app:spanCount="2"
                 tools:itemCount="6"
-                tools:listitem="@layout/item_product" />
+                tools:listitem="@layout/item_product"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/tv_products_title"
@@ -57,7 +58,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="ALL PRODUCTS"
+                android:text="@string/all_products_title"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +91,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_products_title"
                 app:layout_constraintVertical_chainStyle="packed"
-                app:srcCompat="@drawable/ic_empty" />
+                app:srcCompat="@drawable/ic_empty"
+                android:importantForAccessibility="no" />
 
             <TextView
                 android:id="@+id/tv_product_empty"
@@ -128,7 +130,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_sale_products_title"
                 app:layout_constraintVertical_chainStyle="packed"
-                app:srcCompat="@drawable/ic_empty" />
+                app:srcCompat="@drawable/ic_empty"
+                android:importantForAccessibility="no"/>
 
             <TextView
                 android:id="@+id/tv_sale_product_empty"
@@ -162,7 +165,8 @@
                 android:src="@drawable/ic_logout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_sale_products_title"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:importantForAccessibility="no"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

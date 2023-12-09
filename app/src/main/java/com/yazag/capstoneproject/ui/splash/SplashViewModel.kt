@@ -35,6 +35,6 @@ class SplashViewModel @Inject constructor(
 }
 
 sealed interface SplashState {
-    object GoToSignIn : SplashState
-    object GoToHome : SplashState
+    data object GoToSignIn : SplashState
+    data object GoToHome : SplashState
 }

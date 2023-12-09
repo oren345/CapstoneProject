@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="PAYMENT"
+        android:text="@string/payment"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/til_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,9 @@
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/cardholder_name"
             android:maxLines="1"
-            android:hint="Cardholder Name" />
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -52,11 +53,12 @@
             android:id="@+id/et_card_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="16"
             android:digits="0123456789- "
+            android:hint="@string/credit_card_number"
             android:inputType="number"
+            android:maxLength="16"
             android:singleLine="true"
-            android:hint="Credit Card Number" />
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -76,11 +78,12 @@
             android:id="@+id/et_card_month"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="2"
             android:digits="0123456789- "
+            android:hint="@string/month"
             android:inputType="number"
+            android:maxLength="2"
             android:singleLine="true"
-            android:hint="Month" />
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -98,10 +101,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="0123456789- "
+            android:hint="@string/year"
             android:inputType="number"
-            android:singleLine="true"
             android:maxLength="4"
-            android:hint="Year" />
+            android:singleLine="true"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -119,8 +123,9 @@
             android:id="@+id/et_address"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Address"
-            android:textAlignment="textStart" />
+            android:hint="@string/address"
+            android:textAlignment="textStart"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -128,10 +133,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="PAY NOW"
+        android:text="@string/pay_now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/til_name"
-        app:layout_constraintStart_toStartOf="@+id/til_name" />
+        app:layout_constraintStart_toStartOf="@+id/til_name"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_cvv"
@@ -149,11 +155,12 @@
             android:id="@+id/et_cvv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="3"
             android:digits="0123456789- "
+            android:hint="@string/cvv"
             android:inputType="number"
+            android:maxLength="3"
             android:singleLine="true"
-            android:hint="CVV" />
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

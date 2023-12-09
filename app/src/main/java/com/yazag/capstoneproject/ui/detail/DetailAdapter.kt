@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.yazag.capstoneproject.databinding.ItemDetailImagesBinding
 
-
 class DetailAdapter : RecyclerView.Adapter<DetailAdapter.ProductsViewHolder>() {
 
     private val list = ArrayList<String>()
@@ -36,10 +35,6 @@ class DetailAdapter : RecyclerView.Adapter<DetailAdapter.ProductsViewHolder>() {
     fun updateList(updatedList: List<String>) {
         list.clear()
         list.addAll(updatedList)
-        notifyItemRangeInserted(0, updatedList.size)
+        notifyItemRangeRemoved(0, updatedList.size)
     }
 }
-
-
-
-

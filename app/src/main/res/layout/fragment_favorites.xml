@@ -25,10 +25,11 @@
         android:id="@+id/btn_clear_fav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="FAVORİLERİ TEMİZLE"
+        android:text="@string/clear_all"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintButtonSize" />
 
     <ImageView
         android:id="@+id/iv_empty"
@@ -41,7 +42,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_empty" />
+        app:srcCompat="@drawable/ic_empty"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/tv_empty"

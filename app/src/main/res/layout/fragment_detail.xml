@@ -28,7 +28,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:text="TextView"
+                android:text="@string/title"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:text="TextView"
+                android:text="@string/category"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="@string/rating"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/rb_detail"
@@ -87,7 +87,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:text="TextView"
+                android:text="@string/description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,11 +101,13 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:orientation="horizontal"
+                android:contentDescription="null"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/item_detail_images" />
+                tools:listitem="@layout/item_detail_images"
+                tools:ignore="HardcodedText" />
 
             <ImageView
                 android:id="@+id/iv_fav"
@@ -113,9 +115,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:src="@drawable/ic_fav_unselected"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_fav_unselected"
+                android:importantForAccessibility="no" />
 
             <ImageView
                 android:id="@+id/iv_back"
@@ -125,7 +128,8 @@
                 android:layout_marginTop="32dp"
                 android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:importantForAccessibility="no" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -154,7 +158,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="@string/price"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -170,7 +174,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="@string/sale_price"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -184,7 +188,7 @@
                 android:id="@+id/btn_add_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ADD TO CART"
+                android:text="@string/add_to_cart"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_sale_price_detail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -208,7 +212,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_empty" />
+        app:srcCompat="@drawable/ic_empty"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/tv_empty"

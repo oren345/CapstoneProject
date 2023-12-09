@@ -35,11 +35,11 @@ class SearchProductsAdapter(
                 tvSearchCategory.text = product.category
 
                 if(!product.saleState) {
-                    tvSearchPrice.text = "${product.price} ₺"
+                    "${product.price} ₺".also { tvSearchPrice.text = it }
                     tvSearchSalePrice.gone()
                 } else {
-                    tvSearchPrice.text = "${product.price} ₺"
-                    tvSearchSalePrice.text = "${product.salePrice} ₺"
+                    "${product.price} ₺".also { tvSearchPrice.text = it }
+                    "${product.salePrice} ₺".also { tvSearchSalePrice.text = it }
                     tvSearchPrice.strike = true
                 }
 

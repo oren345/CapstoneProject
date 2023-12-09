@@ -1,5 +1,34 @@
 <resources>
     <string name="app_name">CapstoneProject</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="sale_products_title">SALE PRODUCTS</string>
+    <string name="all_products_title">ALL PRODUCTS</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
+    <string name="rating">Rating</string>
+    <string name="sale_price">Sale Price</string>
+    <string name="price">Price</string>
+    <string name="add_to_cart">ADD TO CART</string>
+    <string name="clear_all">CLEAR ALL</string>
+    <string name="go_to_payment">GO TO PAYMENT</string>
+    <string name="total_price">TOTAL PRICE :</string>
+    <string name="payment">PAYMENT</string>
+    <string name="pay_now">PAY NOW</string>
+    <string name="cardholder_name">CardHolder Name</string>
+    <string name="credit_card_number">Credit Card Number</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="cvv">CVV</string>
+    <string name="address">Address</string>
+    <string name="payment_success">Your order has been received!</string>
+    <string name="go_to_home">GO TO HOME</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="fav">Favorites</string>
 </resources>

@@ -51,7 +51,7 @@ class SignUpViewModel @Inject constructor(private val firebaseAuthenticator: Fir
 
 }
 sealed interface SignUpState {
-    object Loading : SignUpState
-    object GoToHome: SignUpState
+    data object Loading : SignUpState
+    data object GoToHome: SignUpState
     data class ShowPopUp(val errorMessage: String) : SignUpState
 }

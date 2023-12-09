@@ -15,14 +15,15 @@
         app:layout_constraintBottom_toTopOf="@+id/til_password_sign_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_sign_up"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_sign_in"
         app:layout_constraintVertical_bias="0.5">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-Mail" />
+            android:hint="@string/email"
+            tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -38,18 +39,19 @@
         app:layout_constraintVertical_bias="0.5">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_password_sign_up"
+            android:id="@+id/et_password_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/password"
             android:inputType="textPassword"
-            android:hint="Password" />
+            tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tv_title_sign_up"
+        android:id="@+id/tv_title_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -64,13 +66,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_title_sign_up"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title_sign_in"
         app:layout_constraintEnd_toEndOf="@+id/til_email_sign_in"
         app:layout_constraintStart_toStartOf="@+id/til_email_sign_in"
         app:layout_constraintTop_toBottomOf="@+id/til_password_sign_in"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/tv_to_sign_up"
@@ -79,11 +82,13 @@
         android:autoLink="map"
         android:clickable="true"
         android:linksClickable="true"
-        android:text="Sign Up"
+        android:minHeight="48dp"
+        android:text="@string/sign_up"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_in"
+        android:focusable="true" />
 
     <ImageView
         android:id="@+id/iv_logo_sign_in"
@@ -92,7 +97,8 @@
         android:src="@drawable/marka"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAccessibility="no"/>
 
     <ImageView
         android:id="@+id/iv_empty"
@@ -105,7 +111,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_empty" />
+        app:srcCompat="@drawable/ic_empty"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/tv_empty"

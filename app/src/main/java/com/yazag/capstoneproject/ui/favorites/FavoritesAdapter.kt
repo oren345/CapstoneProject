@@ -33,12 +33,12 @@ class FavoritesAdapter(
         fun bind(product: ProductUI) {
             with(binding) {
                 tvTitle.text = product.title
-                rbFav.rating = ((product.rate)?.toFloat() ?:1) as Float
+                ((product.rate).toFloat()).also { rbFav.rating = it }
 
                 if(!product.saleState) {
-                    tvPrice.text = "${product.price} ₺"
+                    "${product.price} ₺".also { tvPrice.text = it }
                 } else {
-                    tvPrice.text = "${product.salePrice} ₺"
+                    "${product.salePrice} ₺".also { tvPrice.text = it }
                 }
 
                 Glide.with(ivProduct).load(product.imageOne).into(ivProduct)

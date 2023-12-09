@@ -38,7 +38,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder().apply {
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder().apply {
         addConverterFactory(GsonConverterFactory.create())
         baseUrl(BASE_URL)
         client(okHttpClient)
@@ -46,5 +46,5 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideProductService(retrofit: Retrofit) = retrofit.create(ProductService::class.java)
+    fun provideProductService(retrofit: Retrofit): ProductService = retrofit.create(ProductService::class.java)
 }

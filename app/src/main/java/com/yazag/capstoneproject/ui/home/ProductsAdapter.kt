@@ -40,11 +40,11 @@ class ProductsAdapter(
 
                 if(product.saleState) {
                     tvSalePrice.visible()
-                    tvPrice.text = "${product.price} ₺"
-                    tvSalePrice.text = "${product.salePrice} ₺"
+                    "${product.price} ₺".also { tvPrice.text = it }
+                    "${product.salePrice} ₺".also { tvSalePrice.text = it }
                     tvPrice.strike = true
                 } else{
-                    tvPrice.text = "${product.price} ₺"
+                    "${product.price} ₺".also { tvPrice.text = it }
                     tvPrice.strike = false
                     tvSalePrice.gone()
                 }

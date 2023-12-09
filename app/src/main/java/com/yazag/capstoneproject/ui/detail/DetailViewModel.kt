@@ -21,16 +21,20 @@ class DetailViewModel @Inject constructor(
     private var _detailState = MutableLiveData<DetailState>()
     val detailState: LiveData<DetailState> get() = _detailState
 
+    private var detailData: ProductUI? = null
+
     fun getProductDetail(id: Int) = viewModelScope.launch {
         _detailState.value = DetailState.Loading
 
         _detailState.value = when (val result = productRepository.getProductDetail(id)) {
-            is Resource.Success -> DetailState.SuccessState(result.data)
+            is Resource.Success -> {
+                detailData = result.data
+                DetailState.SuccessState(result.data)
+            }
             is Resource.Fail -> DetailState.EmptyScreen(result.failMessage)
             is Resource.Error -> DetailState.ShowPopUp(result.errorMessage)
         }
     }
-    private val detailData: ProductUI? = null
 
     fun setFavoriteState(id: Int) = viewModelScope.launch {
         detailData?.let {
@@ -39,7 +43,7 @@ class DetailViewModel @Inject constructor(
             } else {
                 productRepository.addToFavorites(it)
             }
-            productRepository.getProductDetail(id)
+            getProductDetail(id)
         }
     }
 
@@ -49,7 +53,7 @@ class DetailViewModel @Inject constructor(
 }
 
 sealed interface DetailState {
-    object Loading : DetailState
+    data object Loading : DetailState
     data class SuccessState(val product: ProductUI) : DetailState
     data class EmptyScreen(val failMessage: String) : DetailState
     data class ShowPopUp(val errorMessage: String) : DetailState

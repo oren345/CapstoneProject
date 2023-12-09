@@ -52,7 +52,7 @@ class SignInViewModel @Inject constructor(
     }
 }
 sealed interface SignInState {
-    object Loading : SignInState
-    object GoToHome: SignInState
+    data object Loading : SignInState
+    data object GoToHome: SignInState
     data class ShowPopUp(val errorMessage: String) : SignInState
 }

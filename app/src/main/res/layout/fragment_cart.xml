@@ -24,30 +24,32 @@
         android:id="@+id/btn_clear_all"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="CLEAR ALL"
+        android:text="@string/clear_all"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_to_payment"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintButtonSize" />
 
     <Button
         android:id="@+id/btn_to_payment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="GO TO PAYMENT"
+        android:text="@string/go_to_payment"
         app:layout_constraintBottom_toBottomOf="@+id/btn_clear_all"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_clear_all"
-        app:layout_constraintTop_toTopOf="@+id/btn_clear_all" />
+        app:layout_constraintTop_toTopOf="@+id/btn_clear_all"
+        tools:ignore="VisualLintButtonSize" />
 
     <TextView
         android:id="@+id/tv_total_price_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TOTAL PRİCE : "
         android:gravity="center"
+        android:text="@string/total_price"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn_clear_all"
@@ -61,7 +63,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TextView"
+        android:text="@string/price"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_total_price_title"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +82,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_empty" />
+        app:srcCompat="@drawable/ic_empty"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/tv_empty"

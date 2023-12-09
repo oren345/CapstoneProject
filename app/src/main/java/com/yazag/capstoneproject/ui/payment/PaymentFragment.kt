@@ -34,7 +34,7 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
         }
         observeData()
     }
-    private fun observeData() = with(binding) {
+    private fun observeData() {
         viewModel.paymentState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is PaymentState.GoToSuccess -> {
@@ -44,6 +44,7 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
                 is PaymentState.ShowPopUp -> {
                     Snackbar.make(requireView(), state.errorMessage, 1000).show()
                 }
+
                 else -> {}
             }
         }

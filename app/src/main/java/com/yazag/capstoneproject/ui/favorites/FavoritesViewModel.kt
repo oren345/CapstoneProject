@@ -41,7 +41,7 @@ class FavoritesViewModel @Inject constructor(
 }
 
 sealed interface FavoritesState {
-    object Loading : FavoritesState
+    data object Loading : FavoritesState
     data class SuccessState(val products: List<ProductUI>) : FavoritesState
     data class EmptyScreen(val failMessage: String) : FavoritesState
     data class ShowPopUp(val errorMessage: String) : FavoritesState

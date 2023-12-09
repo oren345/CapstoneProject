@@ -29,7 +29,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
             btnSignIn.setOnClickListener {
                 viewModel.signIn(
                     etEmailSignIn.text.toString(),
-                    etPasswordSignUp.text.toString()
+                    etPasswordSignIn.text.toString()
                 )
             }
 

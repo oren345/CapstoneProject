@@ -62,7 +62,7 @@ class CartViewModel @Inject constructor(
     }
 }
 sealed interface CartState {
-    object Loading : CartState
+    data object Loading : CartState
     data class SuccessState(val products: List<ProductUI>) : CartState
     data class EmptyScreen(val failMessage: String) : CartState
     data class ShowPopUp(val errorMessage: String) : CartState

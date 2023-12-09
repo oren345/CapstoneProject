@@ -20,6 +20,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
     private val viewModel by viewModels<SearchViewModel>()
 
     private val searchAdapter = SearchProductsAdapter(onProductClick = ::onProductClick)
+    private var categoryAdapter = CategoryAdapter(onCategoryClick = ::onCategoryClick)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,6 +29,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
         with(binding) {
             rvSearch.adapter = searchAdapter
+            rvCategory.adapter = categoryAdapter
 
             with(viewModel){
                 searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener{
@@ -43,7 +45,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                                 searchAdapter.submitList(emptyList())
                             }
                         }
-                        return false
+                        return true
                     }
             }   )}
         }
@@ -56,6 +58,10 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
                 is SearchState.SuccessState -> {
                     progressBar.gone()
+                    ivEmpty.gone()
+                    tvEmpty.gone()
+                    rvCategory.gone()
+                    rvSearch.visible()
                     searchAdapter.submitList(state.products)
                 }
 
@@ -71,11 +77,46 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                     progressBar.gone()
                     Snackbar.make(requireView(), state.errorMessage, 1000).show()
                 }
+
+                else -> {}
+            }
+        }
+
+        viewModel.categoryState.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                CategoryState.Loading -> progressBar.visible()
+
+                is CategoryState.SuccessState -> {
+                    progressBar.gone()
+                    ivEmpty.gone()
+                    tvEmpty.gone()
+                    rvSearch.gone()
+                    rvCategory.visible()
+                    categoryAdapter.submitList(state.products)
+                }
+
+                is CategoryState.EmptyScreen -> {
+                    progressBar.gone()
+                    ivEmpty.visible()
+                    tvEmpty.visible()
+                    rvSearch.gone()
+                    tvEmpty.text = state.failMessage
+                }
+
+                is CategoryState.ShowPopUp -> {
+                    progressBar.gone()
+                    Snackbar.make(requireView(), state.errorMessage, 1000).show()
+                }
+
+                else -> {}
             }
         }
     }
 
     private fun onProductClick(id: Int) {
+        findNavController().navigate(SearchFragmentDirections.searchToDetail(id))
+    }
+    private fun onCategoryClick(id: Int) {
         findNavController().navigate(SearchFragmentDirections.searchToDetail(id))
     }
 }

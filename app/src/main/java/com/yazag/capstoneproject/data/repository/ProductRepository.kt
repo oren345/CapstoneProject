@@ -9,6 +9,7 @@ import com.yazag.capstoneproject.data.model.request.AddToCartRequest
 import com.yazag.capstoneproject.data.model.request.ClearCartRequest
 import com.yazag.capstoneproject.data.model.request.DeleteFromCartRequest
 import com.yazag.capstoneproject.data.model.response.BaseResponse
+import com.yazag.capstoneproject.data.model.response.Category
 import com.yazag.capstoneproject.data.model.response.ProductUI
 import com.yazag.capstoneproject.data.source.local.ProductDao
 import com.yazag.capstoneproject.data.source.remote.ProductService
@@ -178,6 +179,21 @@ class ProductRepository(
 
                 if (response?.status == 200) {
                     Resource.Success(response.products.orEmpty().mapProductToProductUI(favorites))
+                } else {
+                    Resource.Fail(response?.message.orEmpty())
+                }
+            } catch (e: Exception) {
+                Resource.Error(e.message.orEmpty())
+            }
+        }
+
+    suspend fun getCategories(): Resource<List<Category>> =
+        withContext(Dispatchers.IO) {
+            try {
+                val response = productService.getCategories().body()
+
+                if (response?.status == 200) {
+                    Resource.Success(response.category.orEmpty())
                 } else {
                     Resource.Fail(response?.message.orEmpty())
                 }

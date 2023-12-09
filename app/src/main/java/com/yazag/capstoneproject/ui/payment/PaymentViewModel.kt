@@ -46,6 +46,6 @@ class PaymentViewModel @Inject constructor(
 
 sealed interface PaymentState{
 
-    object GoToSuccess : PaymentState
+    data object GoToSuccess : PaymentState
     data class ShowPopUp(val errorMessage: String) : PaymentState
 }

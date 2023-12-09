@@ -60,8 +60,8 @@ class HomeViewModel @Inject constructor(
 }
 
 sealed interface ProductState {
-    object Loading : ProductState
-    object GoToSignIn : ProductState
+    data object Loading : ProductState
+    data object GoToSignIn : ProductState
     data class SuccessState(val products: List<ProductUI>) : ProductState
     data class EmptyScreen(val failMessage: String) : ProductState
     data class ShowPopUp(val errorMessage: String) : ProductState
@@ -69,7 +69,7 @@ sealed interface ProductState {
 
 
 sealed interface SaleProductState {
-    object  Loading : SaleProductState
+    data object  Loading : SaleProductState
     data class SuccessState(val products: List<ProductUI>) : SaleProductState
     data class EmptyScreen(val failMessage : String) : SaleProductState
     data class ShowPopUp(val errorMessage : String) : SaleProductState

@@ -16,7 +16,7 @@ import com.yazag.capstoneproject.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailFragment() : Fragment(R.layout.fragment_detail) {
+class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private val binding by viewBinding(FragmentDetailBinding::bind)
 
@@ -31,11 +31,13 @@ class DetailFragment() : Fragment(R.layout.fragment_detail) {
 
         viewModel.getProductDetail(args.id)
 
+        observeData()
+
         with(binding){
             rvDetailImages.adapter = imagesAdapter
 
             ivBack.setOnClickListener{
-                findNavController().navigate(DetailFragmentDirections.detailToHome())
+                findNavController().navigateUp()
             }
 
             ivFav.setOnClickListener {
@@ -44,11 +46,9 @@ class DetailFragment() : Fragment(R.layout.fragment_detail) {
 
             btnAddCart.setOnClickListener {
                 viewModel.addToCart(args.id)
-                Snackbar.make(requireView(), "Ürün sepete eklendi.", 1000).show()
+                Snackbar.make(requireView(), "Product added to cart.", 1000).show()
             }
         }
-
-        observeData()
     }
 
     private fun observeData() {
@@ -62,21 +62,22 @@ class DetailFragment() : Fragment(R.layout.fragment_detail) {
 
                         is DetailState.SuccessState -> {
                             progressBar.gone()
+
                             val imageList = listOf(state.product.imageOne, state.product.imageTwo, state.product.imageThree)
                             imagesAdapter.updateList(imageList)
                             tvTitleDetail.text = state.product.title
                             tvCategory.text = state.product.category
                             tvDescDetail.text = state.product.description
                             tvRateDetail.text = "${state.product.rate}"
-                            rbDetail.rating = ((state.product.rate)?.toFloat() ?:1) as Float
+                            ((state.product.rate).toFloat()).also { rbDetail.rating = it }
 
                             if(state.product.saleState) {
                                 tvSalePriceDetail.visible()
-                                tvPriceDetail.text = "${state.product.price} ₺"
-                                tvSalePriceDetail.text = "${state.product.salePrice} ₺"
+                                "${state.product.price} ₺".also { tvPriceDetail.text = it }
+                                "${state.product.salePrice} ₺".also { tvSalePriceDetail.text = it }
                                 tvPriceDetail.strike = true
                             } else if(!state.product.saleState){
-                                tvPriceDetail.text = "${state.product.price} ₺"
+                                "${state.product.price} ₺".also { tvPriceDetail.text = it }
                                 tvSalePriceDetail.gone()
                             }
 

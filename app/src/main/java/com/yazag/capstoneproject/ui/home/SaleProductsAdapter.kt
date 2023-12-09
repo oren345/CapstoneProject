@@ -35,8 +35,8 @@ class SaleProductsAdapter (
         fun bind(product: ProductUI) {
             with(binding) {
                 tvSaleProductTitle.text = product.title
-                tvSaleProductPrice.text = "${product.price} ₺"
-                tvSaleProductSalePrice.text = "${product.salePrice} ₺"
+                "${product.price} ₺".also { tvSaleProductPrice.text = it }
+                "${product.salePrice} ₺".also { tvSaleProductSalePrice.text = it }
                 tvSaleProductPrice.strike = true
 
                 ivSaleProductFavorite.setBackgroundResource(

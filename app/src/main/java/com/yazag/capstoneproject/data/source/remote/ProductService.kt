@@ -4,6 +4,7 @@ import com.yazag.capstoneproject.data.model.request.AddToCartRequest
 import com.yazag.capstoneproject.data.model.request.ClearCartRequest
 import com.yazag.capstoneproject.data.model.request.DeleteFromCartRequest
 import com.yazag.capstoneproject.data.model.response.BaseResponse
+import com.yazag.capstoneproject.data.model.response.GetCategoryResponse
 import com.yazag.capstoneproject.data.model.response.GetProductDetailResponse
 import com.yazag.capstoneproject.data.model.response.GetProductsResponse
 import retrofit2.Response
@@ -54,5 +55,8 @@ interface ProductService {
     suspend fun searchProduct(
         @Query("query") query: String
     ): Response<GetProductsResponse>
+
+    @GET("get_categories.php")
+    suspend fun getCategories(): Response<GetCategoryResponse>
 
 }

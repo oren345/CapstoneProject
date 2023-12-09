@@ -53,7 +53,7 @@ fun ProductUI.mapToProductEntity() =
         category = category,
         rate = rate,
         count = count,
-        saleState = saleState
+        saleState = saleState,
     )
 
 fun List<ProductEntity>.mapProductEntityToProductUI() =
